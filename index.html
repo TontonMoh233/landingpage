@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Ce que les mères solos font chaque jour sans jamais être remerciées | Guide Numérique</title>
+    <meta name="description" content="Un guide de 19 pages pour mettre des mots sur ce que vous portez, alléger votre charge et recevoir enfin la reconnaissance que vous méritez.">
+    
+    <!-- TITRES ALTERNATIFS POUR A/B TEST :
+    1. "Maman solo : Comment retrouver de l'air (et votre énergie) en 7 jours."
+    2. "Le guide que chaque maman solo devrait lire pour alléger sa charge."
+    3. "Vous portez tout le monde. Il est temps de prendre soin de vous."
+    -->
+    
+    <!-- COLLER LE CODE DU PIXEL ICI -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        plum: '#5B2A52',
+                        'plum-dark': '#3F1B38',
+                        terracotta: '#C9786A',
+                        gold: '#E8B04B',
+                        'gold-hover': '#D69E38',
+                        cream: '#FBF1EE',
+                    },
+                    fontFamily: {
+                        playfair: ['"Playfair Display"', 'serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Optimisations Mobile et Accessibilité */
+        body {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        @media (max-width: 767px) {
+            body { padding-bottom: calc(100px + env(safe-area-inset-bottom)); } /* Espace pour la barre fixe */
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* Composant Livre CSS 3D */
+        .book-container {
+            perspective: 1000px;
+            width: 200px;
+            margin: 0 auto;
+        }
+        .book {
+            width: 200px;
+            height: 300px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(-15deg) rotateX(5deg);
+            transition: transform 0.4s ease;
+        }
+        .book:hover {
+            transform: rotateY(-5deg) rotateX(2deg) scale(1.02);
+        }
+        .book-front {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #5B2A52 0%, #3F1B38 100%);
+            border-radius: 4px 10px 10px 4px;
+            box-shadow: inset 4px 0 10px rgba(0,0,0,0.1), -5px 5px 20px rgba(0,0,0,0.25);
+            padding: 1.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: #FBF1EE;
+            text-align: center;
+            border-left: 2px solid rgba(255,255,255,0.1);
+        }
+        .book-front::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 6px; bottom: 0; width: 2px;
+            background: rgba(255,255,255,0.15);
+        }
+        .book-spine {
+            position: absolute;
+            width: 20px;
+            height: 100%;
+            background: #3F1B38;
+            left: 0;
+            transform-origin: left;
+            transform: rotateY(-90deg);
+            border-radius: 4px 0 0 4px;
+        }
+        .book-pages {
+            position: absolute;
+            width: 18px;
+            height: 98%;
+            top: 1%;
+            right: -18px;
+            transform-origin: left;
+            transform: rotateY(90deg);
+            border-radius: 0 6px 6px 0;
+            background: repeating-linear-gradient(to bottom, #f4f4f4 0px, #f4f4f4 2px, #ddd 3px);
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Accords FAQ */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-cream text-gray-800 font-inter antialiased">
+
+    <!-- 1. Bandeau fin -->
+    <div class="bg-plum text-white text-xs text-center py-2 px-4 font-medium tracking-wide">
+        Guide numérique · Téléchargement immédiat · Paiement sécurisé
+    </div>
+
+    <!-- 2. Héros -->
+    <header class="pt-10 pb-12 px-5 max-w-3xl mx-auto text-center">
+        <h1 class="font-playfair text-3xl md:text-5xl font-bold text-plum-dark leading-tight mb-4">
+            Vous faites tout.<br>
+            <span class="text-terracotta">Et personne ne le voit.</span>
+        </h1>
+        <p class="text-lg text-gray-700 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Un guide de 19 pages pour mettre des mots sur ce que vous portez, <strong>alléger votre charge</strong> et recevoir enfin la reconnaissance que vous méritez.
+        </p>
+
+        <!-- Couverture CSS -->
+        <div class="book-container mb-10">
+            <div class="book">
+                <div class="book-front">
+                    <div>
+                        <p class="text-[10px] uppercase tracking-widest text-gold mb-2">Guide Pratique</p>
+                        <h2 class="font-playfair text-xl font-bold leading-snug">Ce que les mères solos font chaque jour...</h2>
+                    </div>
+                    <p class="text-sm font-medium text-cream/80">sans jamais être remerciées</p>
+                    <p class="text-xs tracking-wider">Modeste Astuces</p>
+                </div>
+                <div class="book-spine"></div>
+                <div class="book-pages"></div>
+            </div>
+        </div>
+
+        <div class="max-w-md mx-auto">
+            <!-- REMPLACER PAR LE LIEN DE PAIEMENT -->
+            <a href="#" data-track="achat" class="w-full min-h-[48px] flex justify-center items-center bg-gold hover:bg-gold-hover text-plum-dark font-bold py-4 px-6 rounded-xl shadow-[0_8px_20px_rgba(232,176,75,0.4)] transition-all hover:-translate-y-1 text-lg">
+                Je télécharge le guide
+            </a>
+            <p class="text-xs text-gray-500 mt-3 text-center flex items-center justify-center gap-1">
+                <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8V7a4 4 0 00-8 0v4h8z"></path></svg>
+                Téléchargement immédiat · Paiement sécurisé · Lisible sur téléphone
+            </p>
+        </div>
+    </header>
+
+    <!-- 3. Problème -->
+    <section class="py-12 bg-white px-5">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="font-playfair text-2xl md:text-3xl font-bold text-plum-dark mb-6 text-center">Personne ne dit merci.</h2>
+            <div class="space-y-4 text-gray-700 text-lg leading-relaxed">
+                <p>
+                    Parent, cuisinière, comptable, chauffeuse, infirmière, médiatrice... <strong>Vous portez toutes ces casquettes</strong> au quotidien.
+                </p>
+                <p>
+                    Vous organisez, vous anticipez, vous réparez. Le soir, quand la maison est enfin calme, c'est le poids de cette <strong>charge invisible</strong> qui vous tombe sur les épaules.
+                </p>
+                <p>
+                    Et le plus difficile ? C'est que tout le monde trouve cela normal. Il n'y a pas de pause, et <strong>personne ne vous dit merci</strong> pour tout ce que vous accomplissez.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Bénéfices -->
+    <section class="py-16 px-5 bg-cream">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-playfair text-2xl md:text-3xl font-bold text-plum-dark mb-10 text-center">Ce que ce guide va changer pour vous :</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <!-- Carte 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-plum/10 hover:shadow-md transition-shadow">
+                    <div class="text-3xl mb-3">🧠</div>
+                    <h3 class="font-bold text-plum-dark mb-2">Alléger la charge mentale</h3>
+                    <p class="text-gray-600 text-sm">Apprenez à <strong>lâcher prise</strong> sur ce qui ne compte pas vraiment. Des méthodes simples pour vider votre esprit.</p>
+                </div>
+                <!-- Carte 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-plum/10 hover:shadow-md transition-shadow">
+                    <div class="text-3xl mb-3">👛</div>
+                    <h3 class="font-bold text-plum-dark mb-2">Budget en trois blocs</h3>
+                    <p class="text-gray-600 text-sm">Une méthode d'organisation financière claire, pensée pour les mères solos, pour retrouver <strong>sérénité et contrôle</strong>.</p>
+                </div>
+                <!-- Carte 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-plum/10 hover:shadow-md transition-shadow">
+                    <div class="text-3xl mb-3">🛡️</div>
+                    <h3 class="font-bold text-plum-dark mb-2">Contre la culpabilité</h3>
+                    <p class="text-gray-600 text-sm">Découvrez <strong>10 phrases puissantes</strong> à vous répéter quand vous avez l'impression de "ne pas en faire assez".</p>
+                </div>
+                <!-- Carte 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-plum/10 hover:shadow-md transition-shadow">
+                    <div class="text-3xl mb-3">🤝</div>
+                    <h3 class="font-bold text-plum-dark mb-2">Filet de soutien</h3>
+                    <p class="text-gray-600 text-sm">Comment identifier et activer les ressources autour de vous, sans avoir l'impression de <strong>demander l'aumône</strong>.</p>
+                </div>
+                <!-- Carte 5 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-plum/10 hover:shadow-md transition-shadow">
+                    <div class="text-3xl mb-3">🔋</div>
+                    <h3 class="font-bold text-plum-dark mb-2">Énergie & Rituels</h3>
+                    <p class="text-gray-600 text-sm">Même avec 5 minutes par jour, mettez en place des micro-rituels pour <strong>recharger vos propres batteries</strong>.</p>
+                </div>
+                <!-- Carte 6 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-plum/10 hover:shadow-md transition-shadow">
+                    <div class="text-3xl mb-3">📅</div>
+                    <h3 class="font-bold text-plum-dark mb-2">Plan d'action 7 jours</h3>
+                    <p class="text-gray-600 text-sm">Pas de théorie complexe. Un pas-à-pas concret sur une semaine pour <strong>reprendre votre souffle</strong> dès aujourd'hui.</p>
+                </div>
+            </div>
+
+            <div class="max-w-md mx-auto">
+                <!-- REMPLACER PAR LE LIEN DE PAIEMENT -->
+                <a href="#" data-track="achat" class="w-full min-h-[48px] flex justify-center items-center bg-gold hover:bg-gold-hover text-plum-dark font-bold py-4 px-6 rounded-xl shadow-lg transition-all hover:-translate-y-1 text-lg">
+                    Je télécharge le guide
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Contenu -->
+    <section class="py-16 px-5 bg-white">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="font-playfair text-2xl md:text-3xl font-bold text-plum-dark mb-8 text-center">Ce que vous trouverez à l'intérieur</h2>
+            
+            <div class="space-y-4 mb-10 text-gray-700">
+                <div class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-plum/10 text-plum font-bold flex items-center justify-center">1</span>
+                    <p class="mt-1"><strong>Faire face à l'épuisement invisible :</strong> Reconnaître la fatigue pour mieux la traiter.</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-plum/10 text-plum font-bold flex items-center justify-center">2</span>
+                    <p class="mt-1"><strong>La méthode des trois blocs pour le budget :</strong> Organiser ses finances sans angoisse.</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-plum/10 text-plum font-bold flex items-center justify-center">3</span>
+                    <p class="mt-1"><strong>Apaiser la culpabilité de la mère parfaite :</strong> Se détacher des injonctions irréalistes.</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-plum/10 text-plum font-bold flex items-center justify-center">4</span>
+                    <p class="mt-1"><strong>Construire un filet de soutien solide :</strong> Oser demander et accepter de l'aide.</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-plum/10 text-plum font-bold flex items-center justify-center">5</span>
+                    <p class="mt-1"><strong>Retrouver des poches d'énergie :</strong> Créer du temps pour soi dans des journées surchargées.</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-plum/10 text-plum font-bold flex items-center justify-center">6</span>
+                    <p class="mt-1"><strong>Votre plan d'action pour avancer :</strong> Les prochaines étapes simples et immédiates.</p>
+                </div>
+            </div>
+
+            <div class="bg-cream border border-terracotta/30 rounded-2xl p-6 shadow-sm">
+                <h3 class="font-playfair font-bold text-terracotta text-xl mb-4 flex items-center gap-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                    Bonus Inclus
+                </h3>
+                <ul class="space-y-2 text-gray-700">
+                    <li class="flex items-center gap-2"><svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> 1 Étude de cas inspirante</li>
+                    <li class="flex items-center gap-2"><svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> 2 Exercices pratiques d'introspection</li>
+                    <li class="flex items-center gap-2"><svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> 10 Phrases d'urgence contre la culpabilité</li>
+                    <li class="flex items-center gap-2"><svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> 1 Plan d'action guidé sur 7 jours</li>
+                    <li class="flex items-center gap-2"><svg class="w-5 h-5 text-terracotta" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> 1 Page "Mes trois victoires" à imprimer</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Pour vous / Pas pour vous -->
+    <section class="py-16 px-5 bg-plum text-white">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="bg-plum-dark p-8 rounded-2xl border border-white/10">
+                <h3 class="font-playfair text-xl font-bold mb-6 text-cream">Ce guide est pour vous si...</h3>
+                <ul class="space-y-4 text-cream/90">
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        <span>Vous êtes maman solo et portez toute la gestion du foyer.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        <span>Vous cherchez des solutions simples et rapides à mettre en place.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        <span>Vous avez besoin qu'on valide enfin ce que vous ressentez.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-plum-dark p-8 rounded-2xl border border-white/10 opacity-90">
+                <h3 class="font-playfair text-xl font-bold mb-6 text-cream/70">Ce n'est PAS pour vous si...</h3>
+                <ul class="space-y-4 text-cream/70">
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 flex-shrink-0 mt-0.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        <span>Vous cherchez un accompagnement psychologique ou médical.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 flex-shrink-0 mt-0.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        <span>Vous attendez une "baguette magique" qui changera tout instantanément sans aucun effort.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 flex-shrink-0 mt-0.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        <span>Vous avez le temps de lire des livres de développement personnel de 300 pages.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Blocs masqués (Témoignages & Garantie) -->
+    <!-- REMPLIR AVEC DE VRAIS TÉMOIGNAGES UNIQUEMENT -->
+    <!--
+    <section class="py-16 px-5 bg-cream">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="font-playfair text-2xl md:text-3xl font-bold text-plum-dark mb-8 text-center">Elles ont lu le guide</h2>
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm italic text-gray-700">
+                    "Témoignage ici."
+                    <p class="font-bold text-plum mt-3 not-italic">- Prénom</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+    
+    <!-- ACTIVER SEULEMENT SI JE PROPOSE UNE GARANTIE -->
+    <!--
+    <section class="py-12 px-5 bg-white">
+        <div class="max-w-2xl mx-auto text-center border-2 border-gold rounded-2xl p-8 bg-cream/50">
+            <h3 class="font-bold text-xl text-plum-dark mb-3">Garantie 100% Satisfaite</h3>
+            <p class="text-gray-700">Explication de la garantie ici.</p>
+        </div>
+    </section>
+    -->
+
+    <!-- 8. Encadré d'offre -->
+    <section class="py-16 px-5 bg-cream">
+        <div class="max-w-lg mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-plum/10 relative">
+            <!-- Ruban -->
+            <div class="absolute top-0 right-0 bg-terracotta text-white text-xs font-bold px-4 py-1 rounded-bl-lg">
+                OFFRE SPÉCIALE
+            </div>
+            
+            <div class="p-8 text-center bg-plum-dark text-white">
+                <h3 class="font-playfair text-2xl font-bold mb-2">Guide Numérique</h3>
+                <p class="text-cream/80 text-sm">Téléchargement immédiat au format PDF</p>
+                
+                <div class="mt-6 mb-2">
+                    <!-- MODIFIER LE PRIX ICI -->
+                    <span class="text-5xl font-bold text-gold">9,90 €</span>
+                </div>
+                <p class="text-xs text-cream/70 uppercase tracking-wide">Paiement unique</p>
+            </div>
+            
+            <div class="p-8">
+                <ul class="space-y-4 mb-8 text-gray-700">
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-terracotta flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        Le guide complet de 19 pages
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-terracotta flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        Méthodes d'organisation et budget
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-terracotta flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        Tous les bonus (exercices, phrases clés)
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-terracotta flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        Lisible sur smartphone, tablette ou PC
+                    </li>
+                </ul>
+                
+                <!-- REMPLACER PAR LE LIEN DE PAIEMENT -->
+                <a href="#" data-track="achat" class="w-full min-h-[48px] flex justify-center items-center bg-gold hover:bg-gold-hover text-plum-dark font-bold py-4 px-6 rounded-xl shadow-[0_8px_20px_rgba(232,176,75,0.4)] transition-all hover:-translate-y-1 text-lg">
+                    Je télécharge le guide
+                </a>
+                <p class="text-xs text-gray-500 mt-4 text-center flex items-center justify-center gap-1">
+                    <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    Paiement 100% sécurisé
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Mot de l'auteur -->
+    <section class="py-12 px-5 bg-white">
+        <div class="max-w-2xl mx-auto text-center border-t border-b border-gray-100 py-8">
+            <h3 class="font-playfair text-xl font-bold text-plum-dark mb-4">Un mot sur ce guide</h3>
+            <p class="text-gray-700 italic mb-4">
+                "Je n'ai pas écrit ce guide pour vous promettre une vie parfaite sans accrocs. Je l'ai écrit parce que je sais ce que c'est de tout tenir à bout de bras. Ce n'est pas un remède miracle, mais un premier pas pour retrouver de l'air et de la dignité dans votre quotidien."
+            </p>
+            <p class="font-bold text-terracotta">— Modeste Astuces</p>
+        </div>
+    </section>
+
+    <!-- 10. FAQ -->
+    <section class="py-16 px-5 bg-cream">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="font-playfair text-2xl md:text-3xl font-bold text-plum-dark mb-10 text-center">Questions Fréquentes</h2>
+            
+            <div class="space-y-4">
+                <details class="bg-white rounded-xl shadow-sm border border-plum/5 group">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-plum-dark hover:text-terracotta transition-colors">
+                        <span>Je n'ai pas le temps de lire, est-ce pour moi ?</span>
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 p-5 pt-0 border-t border-gray-50 mt-2">
+                        Oui. Ce guide ne fait que 19 pages. Il est pensé pour une lecture rapide, droite au but. Vous pouvez le lire en 20 minutes pendant que les enfants dorment ou dans les transports.
+                    </p>
+                </details>
+                
+                <details class="bg-white rounded-xl shadow-sm border border-plum/5 group">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-plum-dark hover:text-terracotta transition-colors">
+                        <span>Est-ce que ça marche vraiment pour moi ?</span>
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 p-5 pt-0 border-t border-gray-50 mt-2">
+                        Il est conçu spécifiquement pour la réalité quotidienne des mamans solos. Les conseils sont pragmatiques et prennent en compte vos contraintes réelles de temps et d'énergie.
+                    </p>
+                </details>
+
+                <details class="bg-white rounded-xl shadow-sm border border-plum/5 group">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-plum-dark hover:text-terracotta transition-colors">
+                        <span>Est-ce un guide médical ou psychologique ?</span>
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 p-5 pt-0 border-t border-gray-50 mt-2">
+                        Non. C'est un guide pratique basé sur le bon sens et l'organisation. Il ne remplace en aucun cas un suivi médical ou psychologique si vous en ressentez le besoin.
+                    </p>
+                </details>
+
+                <details class="bg-white rounded-xl shadow-sm border border-plum/5 group">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-plum-dark hover:text-terracotta transition-colors">
+                        <span>Comment je le reçois ?</span>
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 p-5 pt-0 border-t border-gray-50 mt-2">
+                        Dès la validation de votre paiement sécurisé, vous recevez un lien de téléchargement immédiat par email pour obtenir votre fichier PDF.
+                    </p>
+                </details>
+
+                <details class="bg-white rounded-xl shadow-sm border border-plum/5 group">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 text-plum-dark hover:text-terracotta transition-colors">
+                        <span>Puis-je le lire sur mon téléphone ?</span>
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </span>
+                    </summary>
+                    <p class="text-gray-600 p-5 pt-0 border-t border-gray-50 mt-2">
+                        Oui, absolument. Le format PDF est optimisé pour être lisible confortablement sur l'écran de votre smartphone.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Bloc Final -->
+    <section class="py-20 px-5 bg-plum-dark text-center">
+        <div class="max-w-xl mx-auto">
+            <h2 class="font-playfair text-3xl font-bold text-cream mb-10 leading-snug">
+                Le merci que vous attendiez commence par celui que vous vous dites.
+            </h2>
+            
+            <!-- REMPLACER PAR LE LIEN DE PAIEMENT -->
+            <a href="#" data-track="achat" class="w-full sm:w-auto inline-flex min-h-[48px] justify-center items-center bg-gold hover:bg-gold-hover text-plum-dark font-bold py-4 px-10 rounded-xl shadow-[0_8px_20px_rgba(232,176,75,0.3)] transition-all hover:-translate-y-1 text-lg">
+                Je télécharge le guide
+            </a>
+            <p class="text-xs text-cream/60 mt-4">
+                Format PDF · 19 pages · Accès immédiat
+            </p>
+        </div>
+    </section>
+
+    <!-- 12. Footer -->
+    <footer class="bg-white py-10 text-center text-sm text-gray-500 px-5">
+        <div class="max-w-3xl mx-auto space-y-4">
+            <p>&copy; 2026 Modeste Astuces. Tous droits réservés.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <!-- LIENS A REMPLACER -->
+                <a href="#" class="hover:text-plum underline">Mentions légales</a>
+                <a href="#" class="hover:text-plum underline">Conditions Générales de Vente</a>
+                <a href="#" class="hover:text-plum underline">Politique de confidentialité</a>
+            </div>
+            <p class="text-xs mt-4 max-w-md mx-auto text-gray-400">
+                Ce site ne fait pas partie du site web Facebook ni de Meta Inc. De plus, ce site n'est PAS approuvé par Facebook en aucune façon. FACEBOOK est une marque déposée de META, Inc.
+            </p>
+        </div>
+    </footer>
+
+    <!-- 13. Barre d'achat fixe Mobile -->
+    <div class="fixed bottom-0 left-0 right-0 p-4 bg-white/95 backdrop-blur-md border-t border-gray-100 shadow-[0_-10px_20px_-10px_rgba(0,0,0,0.1)] z-50 md:hidden flex justify-center items-center">
+        <!-- REMPLACER PAR LE LIEN DE PAIEMENT -->
+        <a href="#" data-track="achat" class="w-full max-w-md min-h-[48px] flex justify-center items-center bg-gold hover:bg-gold-hover text-plum-dark font-bold py-3 px-4 rounded-xl shadow-lg transition-transform active:scale-95 text-base">
+            Je télécharge le guide (9,90 €)
+        </a>
+    </div>
+
+</body>
+</html>

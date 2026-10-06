@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Merci pour votre commande | Téléchargement du guide</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        plum: '#5B2A52',
+                        'plum-dark': '#3F1B38',
+                        terracotta: '#C9786A',
+                        gold: '#E8B04B',
+                        'gold-hover': '#D69E38',
+                        cream: '#FBF1EE',
+                    },
+                    fontFamily: {
+                        playfair: ['"Playfair Display"', 'serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { padding-bottom: env(safe-area-inset-bottom); }
+        
+        /* Composant Livre CSS 3D (Réduit pour la page de remerciement) */
+        .book-container {
+            perspective: 1000px;
+            width: 140px;
+            margin: 0 auto;
+        }
+        .book {
+            width: 140px;
+            height: 210px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(-15deg) rotateX(5deg);
+            transition: transform 0.4s ease;
+        }
+        .book:hover {
+            transform: rotateY(-5deg) rotateX(2deg) scale(1.05);
+        }
+        .book-front {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #5B2A52 0%, #3F1B38 100%);
+            border-radius: 3px 8px 8px 3px;
+            box-shadow: inset 3px 0 8px rgba(0,0,0,0.1), -4px 4px 15px rgba(0,0,0,0.25);
+            padding: 1rem 0.8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: #FBF1EE;
+            text-align: center;
+            border-left: 2px solid rgba(255,255,255,0.1);
+        }
+        .book-front::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 4px; bottom: 0; width: 2px;
+            background: rgba(255,255,255,0.15);
+        }
+        .book-spine {
+            position: absolute;
+            width: 15px;
+            height: 100%;
+            background: #3F1B38;
+            left: 0;
+            transform-origin: left;
+            transform: rotateY(-90deg);
+            border-radius: 3px 0 0 3px;
+        }
+        .book-pages {
+            position: absolute;
+            width: 13px;
+            height: 98%;
+            top: 1%;
+            right: -13px;
+            transform-origin: left;
+            transform: rotateY(90deg);
+            border-radius: 0 5px 5px 0;
+            background: repeating-linear-gradient(to bottom, #f4f4f4 0px, #f4f4f4 2px, #ddd 3px);
+            box-shadow: inset 0 0 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-cream text-gray-800 font-inter antialiased min-h-screen flex flex-col items-center justify-center p-5">
+
+    <div class="w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-plum/10 relative">
+        <!-- Bannière de succès -->
+        <div class="bg-green-600 text-white text-center py-3 px-4 flex items-center justify-center gap-2 font-medium">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Paiement confirmé avec succès !
+        </div>
+
+        <div class="p-8 md:p-12 text-center">
+            
+            <h1 class="font-playfair text-3xl md:text-4xl font-bold text-plum-dark mb-4">
+                Merci pour votre confiance.
+            </h1>
+            
+            <p class="text-gray-600 mb-8 text-lg">
+                Votre guide <strong class="text-plum">"Ce que les mères solos font chaque jour sans jamais être remerciées"</strong> est prêt. Le premier pas vers plus de légèreté commence maintenant.
+            </p>
+
+            <!-- Couverture CSS 3D -->
+            <div class="book-container mb-10">
+                <div class="book">
+                    <div class="book-front">
+                        <div>
+                            <p class="text-[7px] uppercase tracking-widest text-gold mb-1">Guide Pratique</p>
+                            <h2 class="font-playfair text-sm font-bold leading-snug">Ce que les mères solos font...</h2>
+                        </div>
+                        <p class="text-[9px] tracking-wider">MESPMOH</p>
+                    </div>
+                    <div class="book-spine"></div>
+                    <div class="book-pages"></div>
+                </div>
+            </div>
+
+            <!-- BOUTON DE TÉLÉCHARGEMENT -->
+            <!-- Note: L'attribut download indique au navigateur de forcer le téléchargement du fichier -->
+            <a href="./guide.pdf" download="Guide_Meres_Solos_MESPMOH.pdf" class="inline-flex justify-center items-center gap-3 w-full md:w-auto bg-plum hover:bg-plum-dark text-white font-bold py-4 px-10 rounded-xl shadow-[0_8px_20px_rgba(91,42,82,0.3)] transition-all hover:-translate-y-1 text-lg group">
+                <svg class="w-6 h-6 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                Télécharger mon guide PDF
+            </a>
+
+            <div class="mt-8 p-4 bg-cream/50 rounded-xl border border-terracotta/20 text-sm text-gray-700 text-left flex items-start gap-3">
+                <svg class="w-5 h-5 text-terracotta flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <div>
+                    <p class="font-bold text-plum-dark mb-1">Un problème avec le téléchargement ?</p>
+                    <p>Si vous êtes sur smartphone et que le bouton ne réagit pas, maintenez votre doigt appuyé sur le bouton puis choisissez "Télécharger le lien". En cas de souci, contactez le support.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer minimaliste -->
+    <div class="mt-8 text-center text-sm text-gray-500">
+        <a href="index.html" class="hover:text-plum underline transition-colors">Retour à l'accueil</a>
+    </div>
+
+</body>
+</html>
